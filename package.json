@@ -1,0 +1,11 @@
+{
+  "name": "filesig",
+  "version": "1.0.0",
+  "description": "small library to validate Files by reading each magic number from a file",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "telkomdev",
+  "license": "ISC"
+}
