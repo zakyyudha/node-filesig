@@ -4,8 +4,22 @@
   "description": "small library to validate Files by reading each magic number from a file",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/.bin/mocha"
   },
   "author": "telkomdev",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telkomdev/node-filesig.git"
+  },
+  "keywords": [
+    "utility",
+    "validation",
+    "validators",
+    "file validators",
+    "magic number"
+  ],
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
 }
