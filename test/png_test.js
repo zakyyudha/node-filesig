@@ -1,5 +1,5 @@
 const assert = require('assert');
-const { Buffer } = require('node:buffer');
+const { Buffer } = require('buffer');
 const filesig = require('../index');
 
 describe('Test PNG Validation', () => {
