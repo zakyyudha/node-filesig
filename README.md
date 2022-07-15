@@ -2,6 +2,9 @@
 
 small library to validate Files by reading each magic number from a file
 
+#### Requirements
+- Node version 12.x or higher
+
 #### Install
 
 ```shell
