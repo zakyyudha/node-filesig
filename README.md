@@ -2,6 +2,8 @@
 
 small library to validate Files by reading each magic number from a file
 
+[![filesig Node CI](https://github.com/telkomdev/node-filesig/actions/workflows/ci.yml/badge.svg)](https://github.com/telkomdev/node-filesig/actions/workflows/ci.yml)
+
 #### Requirements
 - Node version 12.x or higher
 
