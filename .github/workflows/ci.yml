@@ -2,9 +2,9 @@ name: filesig Node CI
 
 on:
   push:
-    branches: [ master-test ]
+    branches: [ master ]
   pull_request:
-    branches: [ master-test ]
+    branches: [ master ]
 
 jobs:
   build:
