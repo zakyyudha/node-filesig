@@ -1,6 +1,6 @@
 const assert = require('assert');
+const fs = require('fs');
 const filesig = require('../index');
-const fs = require("fs");
 
 describe('Test GZIP Validation', () => {
   it('should return false when input buffer is invalid GZIP', () => {
