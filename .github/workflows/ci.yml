@@ -21,13 +21,13 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Create tmp directory
-        run: mkdir tmp
-      - name: Get MP4 sample file
-        run: curl -sLko tmp/sample-0.mp4 https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4
       - name: Install Yarn
         run: npm install -g npm@latest yarn@latest
       - name: Install dep
         run: yarn
+      - name: Create tmp directory
+        run: mkdir tmp
+      - name: Get MP4 sample file
+        run: curl -sLko tmp/sample-0.mp4 https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4
       - name: Run test
         run: yarn test
