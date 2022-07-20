@@ -30,6 +30,9 @@ jobs:
       - name: Get sample files
         run: |-
           mkdir tmp \
+            && curl -sLko tmp/sample-0.mp3 https://file-examples.com/storage/fefbfe84f862d721699d168/2017/11/file_example_MP3_700KB.mp3 \
+            && curl -sLko tmp/sample-0.wav https://file-examples.com/storage/fefbfe84f862d721699d168/2017/11/file_example_WAV_1MG.wav \
+            && curl -sLko tmp/sample-0.ogg https://file-examples.com/storage/fefbfe84f862d721699d168/2017/11/file_example_OOG_1MG.ogg \
             && curl -sLko tmp/sample-0.pdf https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file-sample_150kB.pdf \
             && curl -sLko tmp/sample-0.rtf https://file-examples.com/storage/fefbfe84f862d721699d168/2019/09/file-sample_100kB.rtf \
             && curl -sLko tmp/sample-0.mp4 https://file-examples.com/storage/fefbfe84f862d721699d168/2017/04/file_example_MP4_480_1_5MG.mp4 \
