@@ -60,9 +60,14 @@ jobs:
             && curl -sLko tmp/sample-0.gif https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_GIF_500kB.gif \
             && curl -sLko tmp/sample-0.svg https://file-examples.com/storage/fefbfe84f862d721699d168/2020/03/file_example_SVG_20kB.svg \
             && curl -sLko tmp/sample-0.ico https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_favicon.ico \
+            && curl -sLko tmp/sample-0.apk https://raw.githubusercontent.com/appium-boneyard/sample-code/master/sample-code/apps/ContactManager/ContactManager.apk \
             && curl -sLko tmp/sample-0.zip https://file-examples.com/storage/fefbfe84f862d721699d168/2017/02/zip_2MB.zip \
             && curl -sLko tmp/sample-0.rar https://getsamplefiles.com/download/rar/sample.rar \
             && curl -sLko tmp/sample-0.tgz https://getsamplefiles.com/download/gzip/sample.tgz \
-            && curl -sLko tmp/sample-0.tar https://getsamplefiles.com/download/tar/sample.tar
+            && curl -sLko tmp/sample-0.tar https://getsamplefiles.com/download/tar/sample.tar \
+            && curl -sLko tmp/sample-0.jar.zip http://www.java2s.com/Code/JarDownload/sample/sample.jar.zip \
+            && unzip tmp/sample-0.jar.zip -d tmp \
+            && mv tmp/sample.jar tmp/sample-0.jar \
+            && rm tmp/sample-0.jar.zip
       - name: Run test
         run: yarn test
