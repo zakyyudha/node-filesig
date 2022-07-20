@@ -3,6 +3,12 @@ const fs = require('fs');
 const filesig = require('../index');
 
 describe('Test ZIP Validation', () => {
+  it('should return false when input buffer is empty', () => {
+    const emptySampleBuffer = Buffer.from([]);
+    const valid = filesig.isZip(emptySampleBuffer);
+    console.assert(valid, false);
+  });
+
   it('should return false when input buffer is invalid ZIP', () => {
     fs.readFile('./tmp/sample-0.rar', (error, invalidZipBuffer) => {
       if (error) throw error;

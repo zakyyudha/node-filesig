@@ -3,6 +3,11 @@ const fs = require('fs');
 const filesig = require('../index');
 
 describe('Test 3GP Validation', () => {
+  it('should return false when input buffer is empty', () => {
+    const emptySampleBuffer = Buffer.from([]);
+    const valid = filesig.is3gp(emptySampleBuffer);
+    console.assert(valid, false);
+  });
   it('should return false when input buffer is invalid 3GP', () => {
     fs.readFile('./tmp/sample-0.mkv', (error, invalid3gpBuffer) => {
       if (error) throw error;

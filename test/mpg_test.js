@@ -3,6 +3,11 @@ const fs = require('fs');
 const filesig = require('../index');
 
 describe('Test MPG Validation', () => {
+  it('should return false when input buffer is empty', () => {
+    const emptySampleBuffer = Buffer.from([]);
+    const valid = filesig.isMpg(emptySampleBuffer);
+    console.assert(valid, false);
+  });
   it('should return false when input buffer is invalid MPG', () => {
     fs.readFile('./tmp/sample-0.3gp', (error, invalidMpgBuffer) => {
       if (error) throw error;

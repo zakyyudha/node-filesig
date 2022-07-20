@@ -3,6 +3,11 @@ const fs = require('fs');
 const filesig = require('../index');
 
 describe('Test MP4 Validation', () => {
+  it('should return false when input buffer is empty', () => {
+    const emptySampleBuffer = Buffer.from([]);
+    const valid = filesig.isMp4(emptySampleBuffer);
+    console.assert(valid, false);
+  });
   it('should return false when input buffer is invalid MP4', () => {
     fs.readFile('./tmp/sample-0.webm', (error, invalidMp4Buffer) => {
       if (error) throw error;

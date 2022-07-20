@@ -3,6 +3,11 @@ const fs = require('fs');
 const filesig = require('../index');
 
 describe('Test SWF Validation', () => {
+  it('should return false when input buffer is empty', () => {
+    const emptySampleBuffer = Buffer.from([]);
+    const valid = filesig.isSwf(emptySampleBuffer);
+    console.assert(valid, false);
+  });
   it('should return false when input buffer is invalid SWF', () => {
     fs.readFile('./tmp/sample-0.3gp', (error, invalidSwfBuffer) => {
       if (error) throw error;
