@@ -7,11 +7,14 @@ on:
     branches: [ master-test ]
 
 jobs:
-  test:
+  test-and-build:
+
     runs-on: ubuntu-latest
+
     strategy:
       matrix:
         node-version: [12.x, 14.x, 15.x, 16.x]
+
     steps:
       - uses: actions/checkout@v2
       - name: Use Node.js ${{ matrix.node-version }}
@@ -22,27 +25,6 @@ jobs:
         run: mkdir tmp
       - name: Get MP4 sample file
         run: curl -sLko tmp/sample-0.mp4 https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4
-      - name: Install Yarn
-        run: npm install -g npm@latest yarn@latest
-      - name: Install dep
-        run: yarn
-      - name: Run test
-        run: yarn test
-
-  build:
-
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        node-version: [12.x, 14.x, 15.x, 16.x]
-
-    steps:
-      - uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
       - name: Install Yarn
         run: npm install -g npm@latest yarn@latest
       - name: Install dep
