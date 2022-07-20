@@ -6,7 +6,7 @@ describe('Test MP4 Validation', () => {
   it('should return false when input buffer is empty', () => {
     const emptySampleBuffer = Buffer.from([]);
     const valid = filesig.isMp4(emptySampleBuffer);
-    console.assert(valid, false);
+    assert.equal(valid, false);
   });
   it('should return false when input buffer is invalid MP4', () => {
     fs.readFile('./tmp/sample-0.mpg', (error, invalidMp4Buffer) => {

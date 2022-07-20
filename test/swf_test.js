@@ -6,7 +6,7 @@ describe('Test SWF Validation', () => {
   it('should return false when input buffer is empty', () => {
     const emptySampleBuffer = Buffer.from([]);
     const valid = filesig.isSwf(emptySampleBuffer);
-    console.assert(valid, false);
+    assert.equal(valid, false);
   });
   it('should return false when input buffer is invalid SWF', () => {
     fs.readFile('./tmp/sample-0.3gp', (error, invalidSwfBuffer) => {
