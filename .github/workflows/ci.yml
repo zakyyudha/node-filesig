@@ -7,7 +7,7 @@ on:
     branches: [ master-test ]
 
 jobs:
-  test-and-build:
+  build:
 
     runs-on: ubuntu-latest
 
@@ -30,6 +30,6 @@ jobs:
       - name: Create tmp directory
         run: mkdir tmp
       - name: Get MP4 sample file
-        run: curl -sLko tmp/sample-0.mp4 https://file-examples.com/wp-content/uploads/2017/04/file_example_MP4_480_1_5MG.mp4
+        run: curl -sLko tmp/sample-0.mp4 https://file-examples.com/storage/fefbfe84f862d721699d168/2017/04/file_example_MP4_480_1_5MG.mp4
       - name: Run test
         run: yarn test
