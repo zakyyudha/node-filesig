@@ -32,6 +32,9 @@ jobs:
           mkdir tmp \
             && curl -sLko tmp/sample-0.mp4 https://file-examples.com/storage/fefbfe84f862d721699d168/2017/04/file_example_MP4_480_1_5MG.mp4 \
             && curl -sLko tmp/sample-0.webm https://file-examples.com/storage/fefbfe84f862d721699d168/2020/03/file_example_WEBM_480_900KB.webm \
-            && curl -sLko tmp/sample-0.webp https://file-examples.com/storage/fefbfe84f862d721699d168/2020/03/file_example_WEBP_50kB.webp
+            && curl -sLko tmp/sample-0.webp https://file-examples.com/storage/fefbfe84f862d721699d168/2020/03/file_example_WEBP_50kB.webp \
+            && curl -sLko tmp/sample-0.png https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_PNG_500kB.png \
+            && curl -sLko tmp/sample-0.jpg https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_JPG_100kB.jpg \
+            && curl -sLko tmp/sample-0.tiff https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_TIFF_1MB.tiff
       - name: Run test
         run: yarn test
