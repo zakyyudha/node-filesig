@@ -3,8 +3,6 @@
 small library to validate Files by reading each magic number from a file
 
 [![filesig Node CI](https://github.com/telkomdev/node-filesig/actions/workflows/ci.yml/badge.svg)](https://github.com/telkomdev/node-filesig/actions/workflows/ci.yml)
-[![codecov](https://codecov.io/gh/lutfailham96/node-filesig/branch/master-test/graph/badge.svg?token=C5GJEHHHA1)](https://codecov.io/gh/lutfailham96/node-filesig)
-[![Maintainability](https://api.codeclimate.com/v1/badges/5d5e798f45c785ef2301/maintainability)](https://codeclimate.com/github/lutfailham96/node-filesig/maintainability)
 
 #### Requirements
 - Node version 12.x or higher
