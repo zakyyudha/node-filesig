@@ -27,11 +27,11 @@ jobs:
         run: npm install -g npm@latest yarn@latest
       - name: Install dep
         run: yarn
-      - name: Create tmp directory
-        run: mkdir tmp
-      - name: Get MP4 sample file
-        run: curl -sLko tmp/sample-0.mp4 https://file-examples.com/storage/fefbfe84f862d721699d168/2017/04/file_example_MP4_480_1_5MG.mp4
-      - name: Get WEBM sample file
-        run: curl -sLko tmp/sample-0.webm https://file-examples.com/storage/fefbfe84f862d721699d168/2020/03/file_example_WEBM_480_900KB.webm
+      - name: Get sample files
+        run: |-
+          mkdir tmp \
+            && curl -sLko tmp/sample-0.mp4 https://file-examples.com/storage/fefbfe84f862d721699d168/2017/04/file_example_MP4_480_1_5MG.mp4 \
+            && curl -sLko tmp/sample-0.webm https://file-examples.com/storage/fefbfe84f862d721699d168/2020/03/file_example_WEBM_480_900KB.webm \
+            && curl -sLko tmp/sample-0.webp https://file-examples.com/storage/fefbfe84f862d721699d168/2020/03/file_example_WEBP_50kB.webp
       - name: Run test
         run: yarn test
