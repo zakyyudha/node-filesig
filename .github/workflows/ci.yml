@@ -73,3 +73,5 @@ jobs:
             && rm tmp/sample-0.jar.zip
       - name: Run test
         run: yarn test
+      - name: Upload coverage to Codecov
+        uses: codecov/codecov-action@v3
