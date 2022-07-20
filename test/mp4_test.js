@@ -9,7 +9,7 @@ describe('Test MP4 Validation', () => {
     console.assert(valid, false);
   });
   it('should return false when input buffer is invalid MP4', () => {
-    fs.readFile('./tmp/sample-0.webm', (error, invalidMp4Buffer) => {
+    fs.readFile('./tmp/sample-0.mpg', (error, invalidMp4Buffer) => {
       if (error) throw error;
       const valid = filesig.isMp4(invalidMp4Buffer);
       assert.equal(valid, false);
