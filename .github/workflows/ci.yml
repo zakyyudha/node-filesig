@@ -53,6 +53,10 @@ jobs:
             && curl -sLko tmp/sample-0.tiff https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_TIFF_1MB.tiff \
             && curl -sLko tmp/sample-0.gif https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_GIF_500kB.gif \
             && curl -sLko tmp/sample-0.svg https://file-examples.com/storage/fefbfe84f862d721699d168/2020/03/file_example_SVG_20kB.svg \
-            && curl -sLko tmp/sample-0.ico https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_favicon.ico
+            && curl -sLko tmp/sample-0.ico https://file-examples.com/storage/fefbfe84f862d721699d168/2017/10/file_example_favicon.ico \
+            && curl -sLko tmp/sample-0.zip https://file-examples.com/storage/fefbfe84f862d721699d168/2017/02/zip_2MB.zip \
+            && curl -sLko tmp/sample-0.rar https://getsamplefiles.com/download/rar/sample.rar \
+            && curl -sLko tmp/sample-0.tgz https://getsamplefiles.com/download/gzip/sample.tgz \
+            && curl -sLko tmp/sample-0.tar https://getsamplefiles.com/download/tar/sample.tar
       - name: Run test
         run: yarn test
