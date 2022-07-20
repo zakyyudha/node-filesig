@@ -1,5 +1,4 @@
 const assert = require('assert');
-const { Buffer } = require('buffer');
 const fs = require('fs');
 const filesig = require('../index');
 

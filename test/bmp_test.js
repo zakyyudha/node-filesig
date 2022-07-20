@@ -1,7 +1,6 @@
 const assert = require('assert');
-const { Buffer } = require('buffer');
+const fs = require('fs');
 const filesig = require('../index');
-const fs = require("fs");
 
 describe('Test BMP Validation', () => {
   it('should return false when input buffer is invalid BMP', () => {
