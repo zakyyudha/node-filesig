@@ -1,18 +1,25 @@
 const assert = require('assert');
-const { Buffer } = require('buffer');
+const fs = require('fs');
 const filesig = require('../index');
 
 describe('Test MP4 Validation', () => {
-  const validMp4Buffer = Buffer.from([0x00, 0x00, 0x00, 0x20, 0x66, 0x74, 0x79, 0x70, 0x6D, 0x70, 0x34, 0x32, 0x00, 0x00, 0x00, 0x00, 0x6D, 0x70, 0x34, 0x32, 0x6D, 0x70, 0x34, 0x31, 0x69, 0x73, 0x6F, 0x6D, 0x61, 0x76, 0x63, 0x31]);
-  const invalidMp4Buffer = Buffer.from([0x00, 0x00, 0x00, 0x20, 0x61, 0x74, 0x79, 0x70, 0x6D, 0x70, 0x34, 0x32, 0x00, 0x00, 0x00, 0x00, 0x6D, 0x70, 0x34, 0x32, 0x6D, 0x70, 0x34, 0x31, 0x69, 0x73, 0x6F, 0x6D, 0x61, 0x76, 0x63, 0x31]);
-
-  it('should return false when input buffer is invalid MP4', () => {
-    const valid = filesig.isMp4(invalidMp4Buffer);
+  it('should return false when input buffer is empty', () => {
+    const emptySampleBuffer = Buffer.from([]);
+    const valid = filesig.isMp4(emptySampleBuffer);
     assert.equal(valid, false);
   });
-
+  it('should return false when input buffer is invalid MP4', () => {
+    fs.readFile('./tmp/sample-0.mpg', (error, invalidMp4Buffer) => {
+      if (error) throw error;
+      const valid = filesig.isMp4(invalidMp4Buffer);
+      assert.equal(valid, false);
+    });
+  });
   it('should return true when input buffer is valid MP4', () => {
-    const valid = filesig.isMp4(validMp4Buffer);
-    assert.equal(valid, true);
+    fs.readFile('./tmp/sample-0.mp4', (error, validMp4Buffer) => {
+      if (error) throw error;
+      const valid = filesig.isMp4(validMp4Buffer);
+      assert.equal(valid, true);
+    });
   });
 });
