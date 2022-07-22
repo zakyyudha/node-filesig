@@ -71,6 +71,6 @@ jobs:
             && mv tmp/sample.jar tmp/sample-0.jar \
             && rm tmp/sample-0.jar.zip
       - name: Run test
-        run: yarn test:cover
+        run: yarn run test:cover
       - name: Upload coverage to Codecov
         uses: codecov/codecov-action@v3
