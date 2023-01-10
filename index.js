@@ -1,3 +1,1 @@
-const v = require('./lib/validator');
-
-module.exports = v;
+module.exports = require('./lib/validator');
