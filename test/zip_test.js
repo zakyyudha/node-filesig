@@ -10,7 +10,7 @@ describe('Test ZIP Validation', () => {
   });
 
   it('should return false when input buffer is invalid ZIP', () => {
-    fs.readFile('./tmp/sample-0.rar', (error, invalidZipBuffer) => {
+    fs.readFileSync('./tmp/sample-0.rar', (error, invalidZipBuffer) => {
       if (error) throw error;
       const valid = filesig.isZip(invalidZipBuffer);
       assert.equal(valid, false);
@@ -18,7 +18,7 @@ describe('Test ZIP Validation', () => {
   });
 
   it('should return true when input buffer is valid ZIP', () => {
-    fs.readFile('./tmp/sample-0.zip', (error, validZipBuffer) => {
+    fs.readFileSync('./tmp/sample-0.zip', (error, validZipBuffer) => {
       if (error) throw error;
       const valid = filesig.isZip(validZipBuffer);
       assert.equal(valid, true);
