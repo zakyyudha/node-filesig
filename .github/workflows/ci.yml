@@ -13,7 +13,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [14.x, 16.x, 18.x]
+        node-version: [ 14.x, 16.x, 18.x ]
 
     steps:
       - uses: actions/checkout@v2
@@ -30,7 +30,7 @@ jobs:
 
       - name: Install Dependencies
         run: yarn
-      
+
       - name: build types
         run: yarn build:types
 
@@ -76,6 +76,7 @@ jobs:
             && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.jar.zip http://www.java2s.com/Code/JarDownload/sample/sample.jar.zip \
             && unzip tmp/sample-0.jar.zip -d tmp \
             && mv tmp/sample.jar tmp/sample-0.jar \
-            && rm tmp/sample-0.jar.zip
+            && rm tmp/sample-0.jar.zip \
+            && curl -H 'Cache-Control: no-cache' -sLko tmp/xss.svg https://gist.githubusercontent.com/rudSarkar/76f1ce7a65c356a5cd71d058ab76a344/raw/cd34a78c963a9af5170a23b5df239b2b8eda6932/xss-image.svg
       - name: Run test
         run: yarn test
