@@ -36,7 +36,8 @@ jobs:
 
       - name: Get sample files
         run: |-
-          curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.mp3 https://filesamples.com/samples/audio/mp3/sample3.mp3 \
+          mkdir tmp \
+            && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.mp3 https://filesamples.com/samples/audio/mp3/sample3.mp3 \
             && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.wav https://freewavesamples.com/files/Ensoniq-ZR-76-01-Dope-77.wav \
             && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.ogg https://upload.wikimedia.org/wikipedia/commons/c/c8/Example.ogg \
             && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.doc https://filesamples.com/samples/document/doc/sample1.doc \
@@ -75,6 +76,7 @@ jobs:
             && curl -H 'Cache-Control: no-cache' -sLko tmp/sample-0.jar.zip http://www.java2s.com/Code/JarDownload/sample/sample.jar.zip \
             && unzip tmp/sample-0.jar.zip -d tmp \
             && mv tmp/sample.jar tmp/sample-0.jar \
-            && rm tmp/sample-0.jar.zip
+            && rm tmp/sample-0.jar.zip \
+            && curl -H 'Cache-Control: no-cache' -sLko tmp/xss.svg https://gist.githubusercontent.com/rudSarkar/76f1ce7a65c356a5cd71d058ab76a344/raw/cd34a78c963a9af5170a23b5df239b2b8eda6932/xss-image.svg
       - name: Run test
         run: yarn test
